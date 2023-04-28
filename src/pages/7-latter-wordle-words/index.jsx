@@ -974,7 +974,7 @@ export default function Page() {
               </button>
             </div>
             <div className="flex gap-2">
-              <button className="rounded bg-green-100 px-5 py-2">
+              <button className="rounded bg-green-100 px-5 py-2" onClick={()=> window.location.reload()}>
                 New Game
               </button>
               <Link href={'/'}>
