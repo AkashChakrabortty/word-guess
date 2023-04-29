@@ -223,7 +223,7 @@ const fixedClassD =
             toast.error(`Your guess is wrong! The word is ${getWordFromLocalStorage}`);
           }
         }
-      } else {
+      } else if(inputValue === 'a' || inputValue === 'b' || inputValue === 'c' || inputValue === 'd' || inputValue === 'e' || inputValue === 'f' || inputValue === 'g' || inputValue === 'h' || inputValue === 'i' || inputValue === 'j' || inputValue === 'k' || inputValue === 'l' || inputValue === 'm' || inputValue === 'n' || inputValue === '0' || inputValue === 'p' || inputValue === 'q' || inputValue === 'r' || inputValue === 's' || inputValue === 't' || inputValue === 'u' || inputValue === 'v' || inputValue === 'w' || inputValue === 'x' || inputValue === 'y' || inputValue === 'z') {
         if (row1.length < 8) {
           setRow1([...row1,inputValue.toUpperCase()]);
   
