@@ -64,7 +64,6 @@ export default function Page() {
     else{
       inputValue = e.key
     }
-    console.log(inputValue)
    
     if (inputValue == 'enter' || inputValue == 'Enter') {
       if (row1.length == 6 && !enter1) {
@@ -364,8 +363,6 @@ export default function Page() {
     }
   };
 
-  console.log(row1)
-  console.log(row2)
   useEffect(() => {
     window.addEventListener('keydown', handleValue);
     return () => {

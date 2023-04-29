@@ -57,7 +57,15 @@ const fixedClassD =
     const [position6, setPosition6] = useState([]);
 
     const handleValue = e => {
-      if (e.target.value == 'enter') {
+      let inputValue;
+      if(e.target.value){
+        inputValue = e.target.value
+      }
+      else{
+        inputValue = e.key
+      }
+
+      if (inputValue == 'enter' || inputValue == 'Enter') {
         if (row1.length == 8 && !enter1) {
           setEnter1(true);
   
@@ -216,14 +224,14 @@ const fixedClassD =
         }
       } else {
         if (row1.length < 8) {
-          setRow1([...row1, e.target.value.toUpperCase()]);
+          setRow1([...row1,inputValue.toUpperCase()]);
   
           //find word existing or not
           const getWordFromLocalStorageArray = localStorage
             .getItem('word')
             .split('');
           const index = getWordFromLocalStorageArray.indexOf(
-            e.target.value.toUpperCase()
+            inputValue.toUpperCase()
           );
           if (index != -1) {
             setExist1([...exist1, true]);
@@ -233,14 +241,14 @@ const fixedClassD =
         }
   
         if (row2.length < 8 && row1.length == 8 && enter1) {
-          setRow2([...row2, e.target.value.toUpperCase()]);
+          setRow2([...row2, inputValue.toUpperCase()]);
   
           //find word existing or not
           const getWordFromLocalStorageArray = localStorage
             .getItem('word')
             .split('');
           const index = getWordFromLocalStorageArray.indexOf(
-            e.target.value.toUpperCase()
+            inputValue.toUpperCase()
           );
           if (index != -1) {
             setExist2([...exist2, true]);
@@ -256,14 +264,14 @@ const fixedClassD =
           enter1 &&
           enter2
         ) {
-          setRow3([...row3, e.target.value.toUpperCase()]);
+          setRow3([...row3, inputValue.toUpperCase()]);
   
           //find word existing or not
           const getWordFromLocalStorageArray = localStorage
             .getItem('word')
             .split('');
           const index = getWordFromLocalStorageArray.indexOf(
-            e.target.value.toUpperCase()
+            inputValue.toUpperCase()
           );
           if (index != -1) {
             setExist3([...exist3, true]);
@@ -281,14 +289,14 @@ const fixedClassD =
           enter2 &&
           enter3
         ) {
-          setRow4([...row4, e.target.value.toUpperCase()]);
+          setRow4([...row4, inputValue.toUpperCase()]);
   
           //find word existing or not
           const getWordFromLocalStorageArray = localStorage
             .getItem('word')
             .split('');
           const index = getWordFromLocalStorageArray.indexOf(
-            e.target.value.toUpperCase()
+            inputValue.toUpperCase()
           );
           if (index != -1) {
             setExist4([...exist4, true]);
@@ -308,14 +316,14 @@ const fixedClassD =
           enter3 &&
           enter4
         ) {
-          setRow5([...row5, e.target.value.toUpperCase()]);
+          setRow5([...row5, inputValue.toUpperCase()]);
   
           //find word existing or not
           const getWordFromLocalStorageArray = localStorage
             .getItem('word')
             .split('');
           const index = getWordFromLocalStorageArray.indexOf(
-            e.target.value.toUpperCase()
+            inputValue.toUpperCase()
           );
           if (index != -1) {
             setExist5([...exist5, true]);
@@ -337,14 +345,14 @@ const fixedClassD =
           enter4 &&
           enter5
         ) {
-          setRow6([...row6, e.target.value.toUpperCase()]);
+          setRow6([...row6, inputValue.toUpperCase()]);
   
           //find word existing or not
           const getWordFromLocalStorageArray = localStorage
             .getItem('word')
             .split('');
           const index = getWordFromLocalStorageArray.indexOf(
-            e.target.value.toUpperCase()
+            inputValue.toUpperCase()
           );
           if (index != -1) {
             setExist6([...exist6, true]);
@@ -354,6 +362,13 @@ const fixedClassD =
         }
       }
     };
+
+    useEffect(() => {
+      window.addEventListener('keydown', handleValue);
+      return () => {
+        window.removeEventListener('keydown', handleValue);
+      };
+    }, [handleValue]);
    
   return (
     <div>
@@ -365,15 +380,15 @@ const fixedClassD =
             >
               {/* row1 */}
               <div
-                className={`${fixedClassD} ${exist1[0] && enter1 ? position1[0] ? 'bg-[#509C2C]' : 'bg-[#C9B458]' : undefined}`}
+                className={`${fixedClassD} ${exist1[0] && enter1 ? position1[0] ? 'bg-[#509C2C] text-white' : 'bg-[#C9B458] text-white' : enter1 ? 'bg-black text-white' : undefined}`}
               >{row1[0]}</div>
               <div
                 className={`${fixedClassD} ${
                   exist1[1] && enter1
                     ? position1[1]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter1 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -383,9 +398,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist1[2] && enter1
                     ? position1[2]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter1 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -395,9 +410,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist1[3] && enter1
                     ? position1[3]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter1 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -407,9 +422,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist1[4] && enter1
                     ? position1[4]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter1 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -419,9 +434,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist1[5] && enter1
                     ? position1[5]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter1 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -431,9 +446,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist1[6] && enter1
                     ? position1[6]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter1 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -443,9 +458,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist1[7] && enter1
                     ? position1[7]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter1 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -458,9 +473,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist2[0] && enter2
                     ? position2[0]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter2 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -470,9 +485,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist2[1] && enter2
                     ? position2[1]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter2 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -482,9 +497,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist2[2] && enter2
                     ? position2[2]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter2 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -494,9 +509,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist2[3] && enter2
                     ? position2[3]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter2 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -506,9 +521,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist2[4] && enter2
                     ? position2[4]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter2 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -518,9 +533,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist2[5] && enter2
                     ? position2[5]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter2 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -530,9 +545,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist2[6] && enter2
                     ? position2[6]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter2 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -542,9 +557,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist2[7] && enter2
                     ? position2[7]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter2 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -559,9 +574,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist3[0] && enter3
                     ? position3[0]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter3 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -571,9 +586,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist3[1] && enter3
                     ? position3[1]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter3 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -583,9 +598,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist3[2] && enter3
                     ? position3[2]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter3 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -595,9 +610,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist3[3] && enter3
                     ? position3[3]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter3 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -607,9 +622,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist3[4] && enter3
                     ? position3[4]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter3 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -619,9 +634,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist3[5] && enter3
                     ? position3[5]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter3 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -631,9 +646,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist3[6] && enter3
                     ? position3[6]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter3 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -643,9 +658,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist3[7] && enter3
                     ? position3[7]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter3 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -658,9 +673,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist4[0] && enter4
                     ? position4[0]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter4 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -670,9 +685,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist4[1] && enter4
                     ? position4[1]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter4 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -682,9 +697,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist4[2] && enter4
                     ? position4[2]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter4 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -694,9 +709,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist4[3] && enter4
                     ? position4[3]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter4 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -706,9 +721,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist4[4] && enter4
                     ? position4[4]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter4 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -718,9 +733,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist4[5] && enter4
                     ? position4[5]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter4 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -730,9 +745,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist4[6] && enter4
                     ? position4[6]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter4 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -742,9 +757,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist4[7] && enter4
                     ? position4[7]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter4 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -757,9 +772,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist5[0] && enter5
                     ? position5[0]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter5 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -769,9 +784,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist5[1] && enter5
                     ? position5[1]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter5 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -781,9 +796,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist5[2] && enter5
                     ? position5[2]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter5 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -793,9 +808,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist5[3] && enter5
                     ? position5[3]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter5 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -805,9 +820,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist5[4] && enter5
                     ? position5[4]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter5 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -817,9 +832,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist5[5] && enter5
                     ? position5[5]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter5 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -829,9 +844,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist5[6] && enter5
                     ? position5[6]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter5 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -841,9 +856,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist5[7] && enter5
                     ? position5[7]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter5 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -856,9 +871,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist6[0] && enter6
                     ? position6[0]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter6 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -868,9 +883,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist6[1] && enter6
                     ? position6[1]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter6 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -880,9 +895,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist6[2] && enter6
                     ? position6[2]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter6 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -892,9 +907,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist6[3] && enter6
                     ? position6[3]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter6 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -904,9 +919,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist6[4] && enter6
                     ? position6[4]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter6 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -916,9 +931,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist6[5] && enter6
                     ? position6[5]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter6 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -928,9 +943,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist6[6] && enter6
                     ? position6[6]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter6 ? 'bg-black text-white' : undefined
                 }
 `}
               >
@@ -940,9 +955,9 @@ const fixedClassD =
                 className={`${fixedClassD} ${
                   exist6[7] && enter6
                     ? position6[7]
-                      ? 'bg-[#509C2C]'
-                      : 'bg-[#C9B458]'
-                    : undefined
+                      ? 'bg-[#509C2C] text-white'
+                      : 'bg-[#C9B458] text-white'
+                    : enter6 ? 'bg-black text-white' : undefined
                 }
 `}
               >
