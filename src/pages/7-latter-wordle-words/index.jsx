@@ -63,7 +63,7 @@ export default function Page() {
       inputValue = e.target.value
     }
     else{
-      inputValue = e.key
+      inputValue = e.key ? e.key : 'Backspace'
     }
 
     if (inputValue == 'enter' || inputValue == 'Enter') {
@@ -198,7 +198,12 @@ toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
             })
           );
         }
-      } else{
+      } if(row6.length == 6 &&
+        enter1 &&
+        enter2 &&
+        enter3 && 
+        enter4 &&
+        enter5){
         setEnter6(true);
 
         const getWordFromLocalStorage = localStorage.getItem('word');
@@ -224,39 +229,53 @@ toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
           toast.error(`Your guess is wrong! The word is ${getWordFromLocalStorage}`);
         }
       }
-    } else if(inputValue === 'a' || inputValue === 'b' || inputValue === 'c' || inputValue === 'd' || inputValue === 'e' || inputValue === 'f' || inputValue === 'g' || inputValue === 'h' || inputValue === 'i' || inputValue === 'j' || inputValue === 'k' || inputValue === 'l' || inputValue === 'm' || inputValue === 'n' || inputValue === '0' || inputValue === 'p' || inputValue === 'q' || inputValue === 'r' || inputValue === 's' || inputValue === 't' || inputValue === 'u' || inputValue === 'v' || inputValue === 'w' || inputValue === 'x' || inputValue === 'y' || inputValue === 'z') {
+    } else if(inputValue === 'Backspace' || inputValue === 'a' || inputValue === 'b' || inputValue === 'c' || inputValue === 'd' || inputValue === 'e' || inputValue === 'f' || inputValue === 'g' || inputValue === 'h' || inputValue === 'i' || inputValue === 'j' || inputValue === 'k' || inputValue === 'l' || inputValue === 'm' || inputValue === 'n' || inputValue === 'o' || inputValue === 'p' || inputValue === 'q' || inputValue === 'r' || inputValue === 's' || inputValue === 't' || inputValue === 'u' || inputValue === 'v' || inputValue === 'w' || inputValue === 'x' || inputValue === 'y' || inputValue === 'z') {
       if (row1.length < 7) {
-        setRow1([...row1, inputValue.toUpperCase()]);
-
-        //find word existing or not
-        const getWordFromLocalStorageArray = localStorage
-          .getItem('word')
-          .split('');
-        const index = getWordFromLocalStorageArray.indexOf(
-          inputValue.toUpperCase()
-        );
-        if (index != -1) {
-          setExist1([...exist1, true]);
-        } else {
-          setExist1([...exist1, false]);
+        if(inputValue === 'Backspace'){
+          row1.pop()
+          setRow1([...row1])
         }
+        else{
+          setRow1([...row1, inputValue.toUpperCase()]);
+
+          //find word existing or not
+          const getWordFromLocalStorageArray = localStorage
+            .getItem('word')
+            .split('');
+          const index = getWordFromLocalStorageArray.indexOf(
+            inputValue.toUpperCase()
+          );
+          if (index != -1) {
+            setExist1([...exist1, true]);
+          } else {
+            setExist1([...exist1, false]);
+          }
+         }
+       
       }
 
       if (row2.length < 7 && row1.length == 7 && enter1) {
-        setRow2([...row2, inputValue.toUpperCase()]);
-
-        //find word existing or not
-        const getWordFromLocalStorageArray = localStorage
-          .getItem('word')
-          .split('');
-        const index = getWordFromLocalStorageArray.indexOf(
-          inputValue.toUpperCase()
-        );
-        if (index != -1) {
-          setExist2([...exist2, true]);
-        } else {
-          setExist2([...exist2, false]);
+        if(inputValue === 'Backspace'){
+          row2.pop()
+          setRow2([...row2])
         }
+        else{ 
+          setRow2([...row2, inputValue.toUpperCase()]);
+
+          //find word existing or not
+          const getWordFromLocalStorageArray = localStorage
+            .getItem('word')
+            .split('');
+          const index = getWordFromLocalStorageArray.indexOf(
+            inputValue.toUpperCase()
+          );
+          if (index != -1) {
+            setExist2([...exist2, true]);
+          } else {
+            setExist2([...exist2, false]);
+          }
+        }
+        
       }
 
       if (
@@ -266,20 +285,27 @@ toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
         enter1 &&
         enter2
       ) {
-        setRow3([...row3, inputValue.toUpperCase()]);
-
-        //find word existing or not
-        const getWordFromLocalStorageArray = localStorage
-          .getItem('word')
-          .split('');
-        const index = getWordFromLocalStorageArray.indexOf(
-          inputValue.toUpperCase()
-        );
-        if (index != -1) {
-          setExist3([...exist3, true]);
-        } else {
-          setExist3([...exist3, false]);
+        if(inputValue === 'Backspace'){
+          row3.pop()
+          setRow3([...row3])
         }
+        else{ 
+          setRow3([...row3, inputValue.toUpperCase()]);
+
+          //find word existing or not
+          const getWordFromLocalStorageArray = localStorage
+            .getItem('word')
+            .split('');
+          const index = getWordFromLocalStorageArray.indexOf(
+            inputValue.toUpperCase()
+          );
+          if (index != -1) {
+            setExist3([...exist3, true]);
+          } else {
+            setExist3([...exist3, false]);
+          }
+        }
+        
       }
 
       if (
@@ -291,20 +317,27 @@ toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
         enter2 &&
         enter3
       ) {
-        setRow4([...row4,inputValue.toUpperCase()]);
-
-        //find word existing or not
-        const getWordFromLocalStorageArray = localStorage
-          .getItem('word')
-          .split('');
-        const index = getWordFromLocalStorageArray.indexOf(
-          inputValue.toUpperCase()
-        );
-        if (index != -1) {
-          setExist4([...exist4, true]);
-        } else {
-          setExist4([...exist4, false]);
+        if(inputValue === 'Backspace'){
+          row4.pop()
+          setRow4([...row4])
         }
+        else{ 
+          setRow4([...row4,inputValue.toUpperCase()]);
+
+          //find word existing or not
+          const getWordFromLocalStorageArray = localStorage
+            .getItem('word')
+            .split('');
+          const index = getWordFromLocalStorageArray.indexOf(
+            inputValue.toUpperCase()
+          );
+          if (index != -1) {
+            setExist4([...exist4, true]);
+          } else {
+            setExist4([...exist4, false]);
+          }
+        }
+       
       }
 
       if (
@@ -318,20 +351,27 @@ toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
         enter3 &&
         enter4
       ) {
-        setRow5([...row5, inputValue.toUpperCase()]);
-
-        //find word existing or not
-        const getWordFromLocalStorageArray = localStorage
-          .getItem('word')
-          .split('');
-        const index = getWordFromLocalStorageArray.indexOf(
-          inputValue.toUpperCase()
-        );
-        if (index != -1) {
-          setExist5([...exist5, true]);
-        } else {
-          setExist5([...exist5, false]);
+        if(inputValue === 'Backspace'){
+          row5.pop()
+          setRow5([...row5])
         }
+        else{ 
+          setRow5([...row5, inputValue.toUpperCase()]);
+
+          //find word existing or not
+          const getWordFromLocalStorageArray = localStorage
+            .getItem('word')
+            .split('');
+          const index = getWordFromLocalStorageArray.indexOf(
+            inputValue.toUpperCase()
+          );
+          if (index != -1) {
+            setExist5([...exist5, true]);
+          } else {
+            setExist5([...exist5, false]);
+          }
+        }
+        
       }
 
       if (
@@ -347,20 +387,27 @@ toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
         enter4 &&
         enter5
       ) {
-        setRow6([...row6, inputValue.toUpperCase()]);
-
-        //find word existing or not
-        const getWordFromLocalStorageArray = localStorage
-          .getItem('word')
-          .split('');
-        const index = getWordFromLocalStorageArray.indexOf(
-          inputValue.toUpperCase()
-        );
-        if (index != -1) {
-          setExist6([...exist6, true]);
-        } else {
-          setExist6([...exist6, false]);
+        if(inputValue === 'Backspace'){
+          row6.pop()
+          setRow6([...row6])
         }
+        else{ 
+          setRow6([...row6, inputValue.toUpperCase()]);
+
+          //find word existing or not
+          const getWordFromLocalStorageArray = localStorage
+            .getItem('word')
+            .split('');
+          const index = getWordFromLocalStorageArray.indexOf(
+            inputValue.toUpperCase()
+          );
+          if (index != -1) {
+            setExist6([...exist6, true]);
+          } else {
+            setExist6([...exist6, false]);
+          }
+        }
+       
       }
     }
   };
@@ -960,6 +1007,7 @@ toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
               </button>
             </div>
             <div className="flex w-full gap-2">
+            <button className={fixedClass} onClick={handleValue}><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" viewBox="0 0 44.18 44.18" height="24" width="24"><path d="M10.625,5.09L0,22.09l10.625,17H44.18v-34H10.625z M42.18,37.09H11.734l-9.375-15l9.375-15H42.18V37.09z"></path><polygon points="18.887,30.797 26.18,23.504 33.473,30.797 34.887,29.383 27.594,22.09 34.887,14.797 33.473,13.383 26.18,20.676      18.887,13.383 17.473,14.797 24.766,22.09 17.473,29.383  "></polygon></svg></button>
               <button className={fixedClass} onClick={handleValue} value="z">
                 z
               </button>
