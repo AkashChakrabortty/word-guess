@@ -221,6 +221,7 @@ toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
               }
             })
           );
+          toast.error(`Your guess is wrong! The word is ${getWordFromLocalStorage}`);
         }
       }
     } else {

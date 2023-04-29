@@ -220,6 +220,7 @@ export default function Page() {
               }
             })
           );
+          toast.error(`Your guess is wrong! The word is ${getWordFromLocalStorage}`);
         }
       }
     } else {

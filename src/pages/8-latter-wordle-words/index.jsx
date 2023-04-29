@@ -220,6 +220,7 @@ const fixedClassD =
                 }
               })
             );
+            toast.error(`Your guess is wrong! The word is ${getWordFromLocalStorage}`);
           }
         }
       } else {
