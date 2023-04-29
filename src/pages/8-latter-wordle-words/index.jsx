@@ -77,7 +77,7 @@ const fixedClassD =
   
           //all value same
           if (row1String === getWordFromLocalStorage) {
-            toast.success('Your guess is right!');
+  toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
             window.location.reload()
           } else {
             setPosition1(
@@ -101,7 +101,7 @@ const fixedClassD =
   
           //all value same
           if (row2String === getWordFromLocalStorage) {
-            toast.success('Your guess is right!');
+  toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
             window.location.reload()
           } else {
             setPosition2(
@@ -125,7 +125,7 @@ const fixedClassD =
   
           //all value same
           if (row3String === getWordFromLocalStorage) {
-            toast.success('Your guess is right!');
+  toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
             window.location.reload()
           } else {
             setPosition3(
@@ -155,7 +155,7 @@ const fixedClassD =
   
           //all value same
           if (row4String === getWordFromLocalStorage) {
-            toast.success('Your guess is right!');
+  toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
             window.location.reload()
           } else {
             setPosition4(
@@ -184,7 +184,7 @@ const fixedClassD =
   
           //all value same
           if (row5String === getWordFromLocalStorage) {
-            toast.success('Your guess is right!');
+  toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
             window.location.reload()
           } else {
             setPosition5(
@@ -208,7 +208,7 @@ const fixedClassD =
   
           //all value same
           if (row6String === getWordFromLocalStorage) {
-            toast.success('Your guess is right!');
+  toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
             window.location.reload()
           } else {
             setPosition6(

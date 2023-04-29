@@ -78,7 +78,7 @@ export default function Page() {
 
         //all value same
         if (row1String === getWordFromLocalStorage) {
-          toast.success('Your guess is right!');
+toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
           window.location.reload()
         } else {
           setPosition1(
@@ -102,7 +102,7 @@ export default function Page() {
 
         //all value same
         if (row2String === getWordFromLocalStorage) {
-          toast.success('Your guess is right!');
+toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
           window.location.reload()
         } else {
           setPosition2(
@@ -126,7 +126,7 @@ export default function Page() {
 
         //all value same
         if (row3String === getWordFromLocalStorage) {
-          toast.success('Your guess is right!');
+toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
           window.location.reload()
         } else {
           setPosition3(
@@ -156,7 +156,7 @@ export default function Page() {
 
         //all value same
         if (row4String === getWordFromLocalStorage) {
-          toast.success('Your guess is right!');
+toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
           window.location.reload()
         } else {
           setPosition4(
@@ -185,7 +185,7 @@ export default function Page() {
 
         //all value same
         if (row5String === getWordFromLocalStorage) {
-          toast.success('Your guess is right!');
+toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
           window.location.reload()
         } else {
           setPosition5(
@@ -209,7 +209,7 @@ export default function Page() {
 
         //all value same
         if (row6String === getWordFromLocalStorage) {
-          toast.success('Your guess is right!');
+toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
           window.location.reload()
         } else {
           setPosition6(
