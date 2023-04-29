@@ -80,15 +80,23 @@ export default function Page() {
           toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
           window.location.reload()
         } else {
-          setPosition1(
-            exist1.map((info, index) => {
-              if (info && row1[index] === getWordFromLocalStorageArray[index]) {
-                return true;
-              } else {
-                return false;
-              }
-            })
-          );
+          if(SixDictionary.indexOf(row1String) === -1){
+            toast.error(`Your guess is not in the dictionary`);
+            setEnter1(true);
+          }
+          else{
+            setPosition1(
+              exist1.map((info, index) => {
+                if (info && row1[index] === getWordFromLocalStorageArray[index]) {
+                  return true;
+                } else {
+                  return false;
+                }
+              })
+            );
+          }
+
+          
         }
       } else if (row2.length == 6 && enter1 && row3.length != 6) {
         setEnter2(true);
@@ -104,15 +112,23 @@ export default function Page() {
           toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
           window.location.reload()
         } else {
-          setPosition2(
-            exist2.map((info, index) => {
-              if (info && row2[index] === getWordFromLocalStorageArray[index]) {
-                return true;
-              } else {
-                return false;
-              }
-            })
-          );
+          if(SixDictionary.indexOf(row2String) === -1){
+            toast.error(`Your guess is not in the dictionary`);
+            setEnter2(true);
+          }
+          else{ 
+
+            setPosition2(
+              exist2.map((info, index) => {
+                if (info && row2[index] === getWordFromLocalStorageArray[index]) {
+                  return true;
+                } else {
+                  return false;
+                }
+              })
+            );
+          }
+          
         }
       } else if (row3.length == 6 && enter1 && enter2 && row4.length != 6) {
         setEnter3(true);
@@ -128,15 +144,22 @@ export default function Page() {
           toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
           window.location.reload()
         } else {
-          setPosition3(
-            exist3.map((info, index) => {
-              if (info && row3[index] === getWordFromLocalStorageArray[index]) {
-                return true;
-              } else {
-                return false;
-              }
-            })
-          );
+          if(SixDictionary.indexOf(row3String) === -1){
+            toast.error(`Your guess is not in the dictionary`);
+            setEnter3(true);
+          }
+          else{  
+            setPosition3(
+              exist3.map((info, index) => {
+                if (info && row3[index] === getWordFromLocalStorageArray[index]) {
+                  return true;
+                } else {
+                  return false;
+                }
+              })
+            );
+          }
+          
         }
       } else if (
         row4.length == 6 &&
@@ -158,15 +181,22 @@ export default function Page() {
           toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
           window.location.reload()
         } else {
-          setPosition4(
-            exist4.map((info, index) => {
-              if (info && row4[index] === getWordFromLocalStorageArray[index]) {
-                return true;
-              } else {
-                return false;
-              }
-            })
-          );
+          if(SixDictionary.indexOf(row4String) === -1){
+            toast.error(`Your guess is not in the dictionary`);
+            setEnter4(true);
+          }
+          else{  
+            setPosition4(
+              exist4.map((info, index) => {
+                if (info && row4[index] === getWordFromLocalStorageArray[index]) {
+                  return true;
+                } else {
+                  return false;
+                }
+              })
+            );
+          }
+          
         }
       } else if ( row5.length == 6 &&
         enter1 &&
@@ -187,15 +217,22 @@ export default function Page() {
           toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
           window.location.reload()
         } else {
-          setPosition5(
-            exist5.map((info, index) => {
-              if (info && row5[index] === getWordFromLocalStorageArray[index]) {
-                return true;
-              } else {
-                return false;
-              }
-            })
-          );
+          if(SixDictionary.indexOf(row5String) === -1){
+            toast.error(`Your guess is not in the dictionary`);
+            setEnter5(true);
+          }
+          else{ 
+            setPosition5(
+              exist5.map((info, index) => {
+                if (info && row5[index] === getWordFromLocalStorageArray[index]) {
+                  return true;
+                } else {
+                  return false;
+                }
+              })
+            );
+          }
+         
         }
       } else if(row6.length == 6 &&
         enter1 &&
@@ -935,7 +972,8 @@ export default function Page() {
               </button>
             </div>
             <div className="flex w-full gap-2">
-            <button className={fixedClass} onClick={handleValue}><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" viewBox="0 0 44.18 44.18" height="24" width="24"><path d="M10.625,5.09L0,22.09l10.625,17H44.18v-34H10.625z M42.18,37.09H11.734l-9.375-15l9.375-15H42.18V37.09z"></path><polygon points="18.887,30.797 26.18,23.504 33.473,30.797 34.887,29.383 27.594,22.09 34.887,14.797 33.473,13.383 26.18,20.676      18.887,13.383 17.473,14.797 24.766,22.09 17.473,29.383  "></polygon></svg></button>
+            <button className="flex h-14 w-full cursor-pointer select-none items-center justify-center rounded-[4px] font-semibold uppercase focus:outline-none text-black dark:text-white bg-gray-30 dark:bg-gray-70 flex-[1.5]"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" viewBox="0 0 44.18 44.18" height="24" width="24"><path d="M10.625,5.09L0,22.09l10.625,17H44.18v-34H10.625z M42.18,37.09H11.734l-9.375-15l9.375-15H42.18V37.09z"></path><polygon points="18.887,30.797 26.18,23.504 33.473,30.797 34.887,29.383 27.594,22.09 34.887,14.797 33.473,13.383 26.18,20.676      18.887,13.383 17.473,14.797 24.766,22.09 17.473,29.383  "></polygon></svg></button>
+
               <button className={fixedClass} onClick={handleValue} value="z">
                 z
               </button>

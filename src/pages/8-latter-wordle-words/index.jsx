@@ -80,15 +80,22 @@ const fixedClassD =
   toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
             window.location.reload()
           } else {
-            setPosition1(
-              exist1.map((info, index) => {
-                if (info && row1[index] === getWordFromLocalStorageArray[index]) {
-                  return true;
-                } else {
-                  return false;
-                }
-              })
-            );
+            if(EightDictionary.indexOf(row1String) === -1){
+              toast.error(`Your guess is not in the dictionary`);
+              setEnter1(true);
+            }
+            else{ 
+              setPosition1(
+                exist1.map((info, index) => {
+                  if (info && row1[index] === getWordFromLocalStorageArray[index]) {
+                    return true;
+                  } else {
+                    return false;
+                  }
+                })
+              );
+            }
+           
           }
         } else if (row2.length == 8 && enter1 && row3.length != 8) {
           setEnter2(true);
@@ -104,15 +111,22 @@ const fixedClassD =
   toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
             window.location.reload()
           } else {
-            setPosition2(
-              exist2.map((info, index) => {
-                if (info && row2[index] === getWordFromLocalStorageArray[index]) {
-                  return true;
-                } else {
-                  return false;
-                }
-              })
-            );
+            if(EightDictionary.indexOf(row2String) === -1){
+              toast.error(`Your guess is not in the dictionary`);
+              setEnter2(true);
+            }
+            else{ 
+              setPosition2(
+                exist2.map((info, index) => {
+                  if (info && row2[index] === getWordFromLocalStorageArray[index]) {
+                    return true;
+                  } else {
+                    return false;
+                  }
+                })
+              );
+            }
+           
           }
         } else if (row3.length == 8 && enter1 && enter2 && row4.length != 8) {
           setEnter3(true);
@@ -128,15 +142,22 @@ const fixedClassD =
   toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
             window.location.reload()
           } else {
-            setPosition3(
-              exist3.map((info, index) => {
-                if (info && row3[index] === getWordFromLocalStorageArray[index]) {
-                  return true;
-                } else {
-                  return false;
-                }
-              })
-            );
+            if(EightDictionary.indexOf(row3String) === -1){
+              toast.error(`Your guess is not in the dictionary`);
+              setEnter3(true);
+            }
+            else{  
+              setPosition3(
+                exist3.map((info, index) => {
+                  if (info && row3[index] === getWordFromLocalStorageArray[index]) {
+                    return true;
+                  } else {
+                    return false;
+                  }
+                })
+              );
+            }
+           
           }
         } else if (
           row4.length == 8 &&
@@ -158,15 +179,22 @@ const fixedClassD =
   toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
             window.location.reload()
           } else {
-            setPosition4(
-              exist4.map((info, index) => {
-                if (info && row4[index] === getWordFromLocalStorageArray[index]) {
-                  return true;
-                } else {
-                  return false;
-                }
-              })
-            );
+            if(EightDictionary.indexOf(row4String) === -1){
+              toast.error(`Your guess is not in the dictionary`);
+              setEnter4(true);
+            }
+            else{  
+              setPosition4(
+                exist4.map((info, index) => {
+                  if (info && row4[index] === getWordFromLocalStorageArray[index]) {
+                    return true;
+                  } else {
+                    return false;
+                  }
+                })
+              );
+            }
+           
           }
         } else if ( row5.length == 8 &&
           enter1 &&
@@ -187,15 +215,22 @@ const fixedClassD =
   toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
             window.location.reload()
           } else {
-            setPosition5(
-              exist5.map((info, index) => {
-                if (info && row5[index] === getWordFromLocalStorageArray[index]) {
-                  return true;
-                } else {
-                  return false;
-                }
-              })
-            );
+            if(EightDictionary.indexOf(row5String) === -1){
+              toast.error(`Your guess is not in the dictionary`);
+              setEnter5(true);
+            }
+            else{ 
+              setPosition5(
+                exist5.map((info, index) => {
+                  if (info && row5[index] === getWordFromLocalStorageArray[index]) {
+                    return true;
+                  } else {
+                    return false;
+                  }
+                })
+              );
+            }
+           
           }
         } if(row6.length == 6 &&
           enter1 &&
