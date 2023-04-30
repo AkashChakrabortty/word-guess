@@ -1,5 +1,5 @@
 export const EightDictionary = [
-    'Solution',
-    'Mountain',
-    'Powerful'
+    'SOLUTION',
+    'MOUNTAIN',
+    'POWERFUL'
 ]

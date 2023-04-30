@@ -1,5 +1,5 @@
 export const FiveDictionary = [
-    'Apple',
-    'House',
-    'Bread'
+    'APPLE',
+    'HOUSE',
+    'BREAD'
 ]

@@ -1,5 +1,5 @@
 export const SixDictionary = [
-    'Dragon',
-    'Purple',
-    'Rocket'
+    'DRAGON',
+    'PURPLE',
+    'ROCKET'
 ]

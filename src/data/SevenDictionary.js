@@ -1,5 +1,5 @@
 export const SevenDictionary = [
-    'Example',
-    'Excited',
-    'Diamond'
+    'EXAMPLE',
+    'EXCITED',
+    'DIAMOND'
 ]
