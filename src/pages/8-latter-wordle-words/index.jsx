@@ -82,7 +82,7 @@ const fixedClassD =
           } else {
             if(EightDictionary.indexOf(row1String) === -1){
               toast.error(`Your guess is not in the dictionary`);
-              setEnter1(true);
+              setEnter1(false);
             }
             else{ 
               setPosition1(
@@ -113,7 +113,7 @@ const fixedClassD =
           } else {
             if(EightDictionary.indexOf(row2String) === -1){
               toast.error(`Your guess is not in the dictionary`);
-              setEnter2(true);
+              setEnter2(false);
             }
             else{ 
               setPosition2(
@@ -144,7 +144,7 @@ const fixedClassD =
           } else {
             if(EightDictionary.indexOf(row3String) === -1){
               toast.error(`Your guess is not in the dictionary`);
-              setEnter3(true);
+              setEnter3(false);
             }
             else{  
               setPosition3(
@@ -181,7 +181,7 @@ const fixedClassD =
           } else {
             if(EightDictionary.indexOf(row4String) === -1){
               toast.error(`Your guess is not in the dictionary`);
-              setEnter4(true);
+              setEnter4(false);
             }
             else{  
               setPosition4(
@@ -217,7 +217,7 @@ const fixedClassD =
           } else {
             if(EightDictionary.indexOf(row5String) === -1){
               toast.error(`Your guess is not in the dictionary`);
-              setEnter5(true);
+              setEnter5(false);
             }
             else{ 
               setPosition5(
@@ -264,86 +264,96 @@ const fixedClassD =
           }
         }
       } else if(inputValue === 'Backspace' || inputValue === 'a' || inputValue === 'b' || inputValue === 'c' || inputValue === 'd' || inputValue === 'e' || inputValue === 'f' || inputValue === 'g' || inputValue === 'h' || inputValue === 'i' || inputValue === 'j' || inputValue === 'k' || inputValue === 'l' || inputValue === 'm' || inputValue === 'n' || inputValue === 'o' || inputValue === 'p' || inputValue === 'q' || inputValue === 'r' || inputValue === 's' || inputValue === 't' || inputValue === 'u' || inputValue === 'v' || inputValue === 'w' || inputValue === 'x' || inputValue === 'y' || inputValue === 'z') {
-        if (row1.length < 8) {
-          if(inputValue === 'Backspace'){
+        if (row1.length <= 8) {
+          if(inputValue === 'Backspace' && !enter1){
             row1.pop()
             setRow1([...row1])
           }
           else{ 
-            setRow1([...row1,inputValue.toUpperCase()]);
+            if(row1.length < 8){
+              setRow1([...row1,inputValue.toUpperCase()]);
   
-            //find word existing or not
-            const getWordFromLocalStorageArray = localStorage
-              .getItem('word')
-              .split('');
-            const index = getWordFromLocalStorageArray.indexOf(
-              inputValue.toUpperCase()
-            );
-            if (index != -1) {
-              setExist1([...exist1, true]);
-            } else {
-              setExist1([...exist1, false]);
+              //find word existing or not
+              const getWordFromLocalStorageArray = localStorage
+                .getItem('word')
+                .split('');
+              const index = getWordFromLocalStorageArray.indexOf(
+                inputValue.toUpperCase()
+              );
+              if (index != -1) {
+                setExist1([...exist1, true]);
+              } else {
+                setExist1([...exist1, false]);
+              }
             }
+           
           }
          
         }
   
-        if (row2.length < 8 && row1.length == 8 && enter1) {
-          if(inputValue === 'Backspace'){
+        if (row2.length <= 8 && row1.length == 8 && enter1) {
+          if(inputValue === 'Backspace' && !enter2){
             row2.pop()
             setRow2([...row2])
           }
           else{ 
-            setRow2([...row2, inputValue.toUpperCase()]);
+            if(row2.length < 8){
+              setRow2([...row2, inputValue.toUpperCase()]);
   
-            //find word existing or not
-            const getWordFromLocalStorageArray = localStorage
-              .getItem('word')
-              .split('');
-            const index = getWordFromLocalStorageArray.indexOf(
-              inputValue.toUpperCase()
-            );
-            if (index != -1) {
-              setExist2([...exist2, true]);
-            } else {
-              setExist2([...exist2, false]);
+              //find word existing or not
+              const getWordFromLocalStorageArray = localStorage
+                .getItem('word')
+                .split('');
+              const index = getWordFromLocalStorageArray.indexOf(
+                inputValue.toUpperCase()
+              );
+              if (index != -1) {
+                setExist2([...exist2, true]);
+              } else {
+                setExist2([...exist2, false]);
+              }
             }
+           
           }
          
         }
   
         if (
-          row3.length < 8 &&
+          row3.length <= 8 &&
           row1.length == 8 &&
           row2.length == 8 &&
           enter1 &&
           enter2
         ) {
-          if(inputValue === 'Backspace'){
+          if(inputValue === 'Backspace' &&
+          !enter3){
             row3.pop()
             setRow3([...row3])
           }
           else{ 
-            setRow3([...row3, inputValue.toUpperCase()]);
+            if(row3.length < 8){
+              setRow3([...row3, inputValue.toUpperCase()]);
   
-            //find word existing or not
-            const getWordFromLocalStorageArray = localStorage
-              .getItem('word')
-              .split('');
-            const index = getWordFromLocalStorageArray.indexOf(
-              inputValue.toUpperCase()
-            );
-            if (index != -1) {
-              setExist3([...exist3, true]);
-            } else {
-              setExist3([...exist3, false]);
+              //find word existing or not
+              const getWordFromLocalStorageArray = localStorage
+                .getItem('word')
+                .split('');
+              const index = getWordFromLocalStorageArray.indexOf(
+                inputValue.toUpperCase()
+              );
+              if (index != -1) {
+                setExist3([...exist3, true]);
+              } else {
+                setExist3([...exist3, false]);
+              }
             }
+            
           }
           
         }
   
         if (
-          row4.length < 8 &&
+          row4.length <= 8 &&
           row1.length == 8 &&
           row2.length == 8 &&
           row3.length == 8 &&
@@ -351,31 +361,35 @@ const fixedClassD =
           enter2 &&
           enter3
         ) {
-          if(inputValue === 'Backspace'){
+          if(inputValue === 'Backspace'  &&
+          !enter4){
             row4.pop()
             setRow4([...row4])
           }
           else{ 
-            setRow4([...row4, inputValue.toUpperCase()]);
+            if(row4.length < 8){
+              setRow4([...row4, inputValue.toUpperCase()]);
   
-            //find word existing or not
-            const getWordFromLocalStorageArray = localStorage
-              .getItem('word')
-              .split('');
-            const index = getWordFromLocalStorageArray.indexOf(
-              inputValue.toUpperCase()
-            );
-            if (index != -1) {
-              setExist4([...exist4, true]);
-            } else {
-              setExist4([...exist4, false]);
+              //find word existing or not
+              const getWordFromLocalStorageArray = localStorage
+                .getItem('word')
+                .split('');
+              const index = getWordFromLocalStorageArray.indexOf(
+                inputValue.toUpperCase()
+              );
+              if (index != -1) {
+                setExist4([...exist4, true]);
+              } else {
+                setExist4([...exist4, false]);
+              }
             }
+            
           }
          
         }
   
         if (
-          row5.length < 8 &&
+          row5.length <= 8 &&
           row1.length == 8 &&
           row2.length == 8 &&
           row3.length == 8 &&
@@ -385,31 +399,35 @@ const fixedClassD =
           enter3 &&
           enter4
         ) {
-          if(inputValue === 'Backspace'){
+          if(inputValue === 'Backspace' &&
+          !enter5){
             row5.pop()
             setRow5([...row5])
           }
           else{ 
-            setRow5([...row5, inputValue.toUpperCase()]);
+            if(row5.length < 8){
+              setRow5([...row5, inputValue.toUpperCase()]);
   
-            //find word existing or not
-            const getWordFromLocalStorageArray = localStorage
-              .getItem('word')
-              .split('');
-            const index = getWordFromLocalStorageArray.indexOf(
-              inputValue.toUpperCase()
-            );
-            if (index != -1) {
-              setExist5([...exist5, true]);
-            } else {
-              setExist5([...exist5, false]);
+              //find word existing or not
+              const getWordFromLocalStorageArray = localStorage
+                .getItem('word')
+                .split('');
+              const index = getWordFromLocalStorageArray.indexOf(
+                inputValue.toUpperCase()
+              );
+              if (index != -1) {
+                setExist5([...exist5, true]);
+              } else {
+                setExist5([...exist5, false]);
+              }
             }
+            
           }
          
         }
   
         if (
-          row6.length < 8 &&
+          row6.length <= 8 &&
           row1.length == 8 &&
           row2.length == 8 &&
           row3.length == 8 &&
