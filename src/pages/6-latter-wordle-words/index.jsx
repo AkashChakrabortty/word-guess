@@ -64,7 +64,6 @@ export default function Page() {
     else{
       inputValue = e.key ? e.key : 'Backspace'
     }
-    console.log(inputValue)
    
     if (inputValue == 'enter' || inputValue == 'Enter') {
       if (row1.length == 6 && !enter1) {
