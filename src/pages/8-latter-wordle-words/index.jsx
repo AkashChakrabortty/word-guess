@@ -74,7 +74,7 @@ const fixedClassD =
             }
         }
         else{
-          return color[row1[index]] =  'bg-black text-white'
+          return color[row1[index]] =  'bg-gray-30'
         }
       })
       setColor( color );
@@ -93,7 +93,7 @@ const fixedClassD =
             }
         }
         else{
-          return color[row2[index]] =  'bg-black text-white'
+          return color[row2[index]] =  'bg-gray-30' 
         }
       })
       setColor( color );
@@ -112,7 +112,7 @@ const fixedClassD =
             }
         }
         else{
-          return color[row3[index]] =  'bg-black text-white'
+          return color[row3[index]] =  'bg-gray-30' 
         }
       })
       setColor( color );
@@ -130,7 +130,7 @@ const fixedClassD =
             }
         }
         else{
-          return color[row4[index]] =  'bg-black text-white'
+          return color[row4[index]] =  'bg-gray-30' 
         }
       })
       setColor( color );
@@ -148,7 +148,7 @@ const fixedClassD =
             }
         }
         else{
-          return color[row5[index]] =  'bg-black text-white'
+          return color[row5[index]] =  'bg-gray-30' 
         }
       })
       setColor( color );
@@ -618,7 +618,7 @@ const fixedClassD =
             >
               {/* row1 */}
               <div
-                className={`${fixedClassD} ${exist1[0] && enter1 ? position1[0] ? 'bg-[#509C2C] text-white' : 'bg-[#C9B458] text-white' : enter1 ? 'bg-black text-white' : undefined}`}
+                className={`${fixedClassD} ${exist1[0] && enter1 ? position1[0] ? 'bg-[#509C2C] text-white' : 'bg-[#C9B458] text-white' : enter1 ? 'bg-gray-30'  : undefined}`}
               >{row1[0]}</div>
               <div
                 className={`${fixedClassD} ${
@@ -626,7 +626,7 @@ const fixedClassD =
                     ? position1[1]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter1 ? 'bg-black text-white' : undefined
+                    : enter1 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -638,7 +638,7 @@ const fixedClassD =
                     ? position1[2]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter1 ? 'bg-black text-white' : undefined
+                    : enter1 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -650,7 +650,7 @@ const fixedClassD =
                     ? position1[3]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter1 ? 'bg-black text-white' : undefined
+                    : enter1 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -662,7 +662,7 @@ const fixedClassD =
                     ? position1[4]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter1 ? 'bg-black text-white' : undefined
+                    : enter1 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -674,7 +674,7 @@ const fixedClassD =
                     ? position1[5]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter1 ? 'bg-black text-white' : undefined
+                    : enter1 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -686,7 +686,7 @@ const fixedClassD =
                     ? position1[6]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter1 ? 'bg-black text-white' : undefined
+                    : enter1 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -698,7 +698,7 @@ const fixedClassD =
                     ? position1[7]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter1 ? 'bg-black text-white' : undefined
+                    : enter1 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -713,7 +713,7 @@ const fixedClassD =
                     ? position2[0]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter2 ? 'bg-black text-white' : undefined
+                    : enter2 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -725,7 +725,7 @@ const fixedClassD =
                     ? position2[1]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter2 ? 'bg-black text-white' : undefined
+                    : enter2 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -737,7 +737,7 @@ const fixedClassD =
                     ? position2[2]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter2 ? 'bg-black text-white' : undefined
+                    : enter2 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -749,7 +749,7 @@ const fixedClassD =
                     ? position2[3]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter2 ? 'bg-black text-white' : undefined
+                    : enter2 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -761,7 +761,7 @@ const fixedClassD =
                     ? position2[4]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter2 ? 'bg-black text-white' : undefined
+                    : enter2 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -773,7 +773,7 @@ const fixedClassD =
                     ? position2[5]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter2 ? 'bg-black text-white' : undefined
+                    : enter2 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -785,7 +785,7 @@ const fixedClassD =
                     ? position2[6]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter2 ? 'bg-black text-white' : undefined
+                    : enter2 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -797,7 +797,7 @@ const fixedClassD =
                     ? position2[7]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter2 ? 'bg-black text-white' : undefined
+                    : enter2 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -814,7 +814,7 @@ const fixedClassD =
                     ? position3[0]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter3 ? 'bg-black text-white' : undefined
+                    : enter3 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -826,7 +826,7 @@ const fixedClassD =
                     ? position3[1]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter3 ? 'bg-black text-white' : undefined
+                    : enter3 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -838,7 +838,7 @@ const fixedClassD =
                     ? position3[2]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter3 ? 'bg-black text-white' : undefined
+                    : enter3 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -850,7 +850,7 @@ const fixedClassD =
                     ? position3[3]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter3 ? 'bg-black text-white' : undefined
+                    : enter3 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -862,7 +862,7 @@ const fixedClassD =
                     ? position3[4]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter3 ? 'bg-black text-white' : undefined
+                    : enter3 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -874,7 +874,7 @@ const fixedClassD =
                     ? position3[5]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter3 ? 'bg-black text-white' : undefined
+                    : enter3 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -886,7 +886,7 @@ const fixedClassD =
                     ? position3[6]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter3 ? 'bg-black text-white' : undefined
+                    : enter3 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -898,7 +898,7 @@ const fixedClassD =
                     ? position3[7]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter3 ? 'bg-black text-white' : undefined
+                    : enter3 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -913,7 +913,7 @@ const fixedClassD =
                     ? position4[0]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter4 ? 'bg-black text-white' : undefined
+                    : enter4 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -925,7 +925,7 @@ const fixedClassD =
                     ? position4[1]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter4 ? 'bg-black text-white' : undefined
+                    : enter4 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -937,7 +937,7 @@ const fixedClassD =
                     ? position4[2]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter4 ? 'bg-black text-white' : undefined
+                    : enter4 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -949,7 +949,7 @@ const fixedClassD =
                     ? position4[3]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter4 ? 'bg-black text-white' : undefined
+                    : enter4 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -961,7 +961,7 @@ const fixedClassD =
                     ? position4[4]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter4 ? 'bg-black text-white' : undefined
+                    : enter4 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -973,7 +973,7 @@ const fixedClassD =
                     ? position4[5]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter4 ? 'bg-black text-white' : undefined
+                    : enter4 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -985,7 +985,7 @@ const fixedClassD =
                     ? position4[6]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter4 ? 'bg-black text-white' : undefined
+                    : enter4 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -997,7 +997,7 @@ const fixedClassD =
                     ? position4[7]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter4 ? 'bg-black text-white' : undefined
+                    : enter4 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1012,7 +1012,7 @@ const fixedClassD =
                     ? position5[0]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter5 ? 'bg-black text-white' : undefined
+                    : enter5 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1024,7 +1024,7 @@ const fixedClassD =
                     ? position5[1]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter5 ? 'bg-black text-white' : undefined
+                    : enter5 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1036,7 +1036,7 @@ const fixedClassD =
                     ? position5[2]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter5 ? 'bg-black text-white' : undefined
+                    : enter5 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1048,7 +1048,7 @@ const fixedClassD =
                     ? position5[3]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter5 ? 'bg-black text-white' : undefined
+                    : enter5 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1060,7 +1060,7 @@ const fixedClassD =
                     ? position5[4]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter5 ? 'bg-black text-white' : undefined
+                    : enter5 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1072,7 +1072,7 @@ const fixedClassD =
                     ? position5[5]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter5 ? 'bg-black text-white' : undefined
+                    : enter5 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1084,7 +1084,7 @@ const fixedClassD =
                     ? position5[6]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter5 ? 'bg-black text-white' : undefined
+                    : enter5 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1096,7 +1096,7 @@ const fixedClassD =
                     ? position5[7]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter5 ? 'bg-black text-white' : undefined
+                    : enter5 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1111,7 +1111,7 @@ const fixedClassD =
                     ? position6[0]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter6 ? 'bg-black text-white' : undefined
+                    : enter6 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1123,7 +1123,7 @@ const fixedClassD =
                     ? position6[1]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter6 ? 'bg-black text-white' : undefined
+                    : enter6 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1135,7 +1135,7 @@ const fixedClassD =
                     ? position6[2]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter6 ? 'bg-black text-white' : undefined
+                    : enter6 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1147,7 +1147,7 @@ const fixedClassD =
                     ? position6[3]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter6 ? 'bg-black text-white' : undefined
+                    : enter6 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1159,7 +1159,7 @@ const fixedClassD =
                     ? position6[4]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter6 ? 'bg-black text-white' : undefined
+                    : enter6 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1171,7 +1171,7 @@ const fixedClassD =
                     ? position6[5]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter6 ? 'bg-black text-white' : undefined
+                    : enter6 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1183,7 +1183,7 @@ const fixedClassD =
                     ? position6[6]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter6 ? 'bg-black text-white' : undefined
+                    : enter6 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1195,7 +1195,7 @@ const fixedClassD =
                     ? position6[7]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter6 ? 'bg-black text-white' : undefined
+                    : enter6 ? 'bg-gray-30'  : undefined
                 }
 `}
               >

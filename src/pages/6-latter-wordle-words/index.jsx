@@ -74,7 +74,7 @@ export default function Page() {
             }
         }
         else{
-          return color[row1[index]] =  'bg-black text-white'
+          return color[row1[index]] =  'bg-gray-30'
         }
       })
       setColor( color );
@@ -93,7 +93,7 @@ export default function Page() {
             }
         }
         else{
-          return color[row2[index]] =  'bg-black text-white'
+          return color[row2[index]] =  'bg-gray-30'
         }
       })
       setColor( color );
@@ -112,7 +112,7 @@ export default function Page() {
             }
         }
         else{
-          return color[row3[index]] =  'bg-black text-white'
+          return color[row3[index]] =  'bg-gray-30'
         }
       })
       setColor( color );
@@ -130,7 +130,7 @@ export default function Page() {
             }
         }
         else{
-          return color[row4[index]] =  'bg-black text-white'
+          return color[row4[index]] = 'bg-gray-30'
         }
       })
       setColor( color );
@@ -148,7 +148,7 @@ export default function Page() {
             }
         }
         else{
-          return color[row5[index]] =  'bg-black text-white'
+          return color[row5[index]] =  'bg-gray-30'
         }
       })
       setColor( color );
@@ -625,7 +625,7 @@ export default function Page() {
             >
               <div
                 className={`${fixedClassD} ${
-                  exist1[0] && enter1 ? position1[0] ? 'bg-[#509C2C] text-white' : 'bg-[#C9B458] text-white': enter1 ? 'bg-black text-white' : undefined}`}
+                  exist1[0] && enter1 ? position1[0] ? 'bg-[#509C2C] text-white' : 'bg-[#C9B458] text-white': enter1 ? 'bg-gray-30'  : undefined}`}
               >
                 {row1[0]}
               </div>
@@ -635,7 +635,7 @@ export default function Page() {
                     ? position1[1]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter1 ? 'bg-black text-white' : undefined
+                    : enter1 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -647,7 +647,7 @@ export default function Page() {
                     ? position1[2]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter1 ? 'bg-black text-white' : undefined
+                    : enter1 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -659,7 +659,7 @@ export default function Page() {
                     ? position1[3]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter1 ? 'bg-black text-white' : undefined
+                    : enter1 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -671,7 +671,7 @@ export default function Page() {
                     ? position1[4]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter1 ? 'bg-black text-white' : undefined
+                    : enter1 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -683,7 +683,7 @@ export default function Page() {
                     ? position1[5]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter1 ? 'bg-black text-white' : undefined
+                    : enter1 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -698,7 +698,7 @@ export default function Page() {
                     ? position2[0]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter2 ? 'bg-black text-white' : undefined
+                    : enter2 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -710,7 +710,7 @@ export default function Page() {
                     ? position2[1]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    :  enter2 ? 'bg-black text-white' : undefined
+                    :  enter2 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -722,7 +722,7 @@ export default function Page() {
                     ? position2[2]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    :  enter2 ? 'bg-black text-white' : undefined
+                    :  enter2 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -734,7 +734,7 @@ export default function Page() {
                     ? position2[3]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    :  enter2 ? 'bg-black text-white' : undefined
+                    :  enter2 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -746,7 +746,7 @@ export default function Page() {
                     ? position2[4]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    :  enter2 ? 'bg-black text-white' : undefined
+                    :  enter2 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -758,7 +758,7 @@ export default function Page() {
                     ? position2[5]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    :  enter2 ? 'bg-black text-white' : undefined
+                    :  enter2 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -772,7 +772,7 @@ export default function Page() {
                     ? position3[0]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter3 ? 'bg-black text-white' : undefined
+                    : enter3 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -784,7 +784,7 @@ export default function Page() {
                     ? position3[1]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter3 ? 'bg-black text-white' : undefined
+                    : enter3 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -796,7 +796,7 @@ export default function Page() {
                     ? position3[2]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter3 ? 'bg-black text-white' : undefined
+                    : enter3 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -808,7 +808,7 @@ export default function Page() {
                     ? position3[3]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter3 ? 'bg-black text-white' : undefined
+                    : enter3 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -820,7 +820,7 @@ export default function Page() {
                     ? position3[4]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    :  enter3 ? 'bg-black text-white' : undefined
+                    :  enter3 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -832,7 +832,7 @@ export default function Page() {
                     ? position3[5]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter3 ? 'bg-black text-white' : undefined
+                    : enter3 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -847,7 +847,7 @@ export default function Page() {
                     ? position4[0]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter4 ? 'bg-black text-white' : undefined
+                    : enter4 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -859,7 +859,7 @@ export default function Page() {
                     ? position4[1]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    :  enter4 ? 'bg-black text-white' : undefined
+                    :  enter4 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -871,7 +871,7 @@ export default function Page() {
                     ? position4[2]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    :  enter4 ? 'bg-black text-white' : undefined
+                    :  enter4 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -883,7 +883,7 @@ export default function Page() {
                     ? position4[3]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    :  enter4 ? 'bg-black text-white' : undefined
+                    :  enter4 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -895,7 +895,7 @@ export default function Page() {
                     ? position4[4]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    :  enter4 ? 'bg-black text-white' : undefined
+                    :  enter4 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -907,7 +907,7 @@ export default function Page() {
                     ? position4[5]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    :  enter4 ? 'bg-black text-white' : undefined
+                    :  enter4 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -920,7 +920,7 @@ export default function Page() {
                     ? position5[0]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter5 ? 'bg-black text-white' : undefined
+                    : enter5 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -932,7 +932,7 @@ export default function Page() {
                     ? position5[1]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter5 ? 'bg-black text-white' : undefined
+                    : enter5 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -944,7 +944,7 @@ export default function Page() {
                     ? position5[2]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter5 ? 'bg-black text-white' : undefined
+                    : enter5 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -956,7 +956,7 @@ export default function Page() {
                     ? position5[3]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter5 ? 'bg-black text-white' : undefined
+                    : enter5 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -968,7 +968,7 @@ export default function Page() {
                     ? position5[4]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter5 ? 'bg-black text-white' : undefined
+                    : enter5 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -980,7 +980,7 @@ export default function Page() {
                     ? position5[5]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter5 ? 'bg-black text-white' : undefined
+                    : enter5 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -995,7 +995,7 @@ export default function Page() {
                     ? position6[0]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter6 ? 'bg-black text-white' : undefined
+                    : enter6 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1007,7 +1007,7 @@ export default function Page() {
                     ? position6[1]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter6 ? 'bg-black text-white' : undefined
+                    : enter6 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1019,7 +1019,7 @@ export default function Page() {
                     ? position6[2]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter6 ? 'bg-black text-white' : undefined
+                    : enter6 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1031,7 +1031,7 @@ export default function Page() {
                     ? position6[3]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter6 ? 'bg-black text-white' : undefined
+                    : enter6 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1043,7 +1043,7 @@ export default function Page() {
                     ? position6[4]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter6 ? 'bg-black text-white' : undefined
+                    : enter6 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
@@ -1055,7 +1055,7 @@ export default function Page() {
                     ? position6[5]
                       ? 'bg-[#509C2C] text-white'
                       : 'bg-[#C9B458] text-white'
-                    : enter6 ? 'bg-black text-white' : undefined
+                    : enter6 ? 'bg-gray-30'  : undefined
                 }
 `}
               >
