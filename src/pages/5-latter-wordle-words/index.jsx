@@ -12,7 +12,7 @@ export const metadata = {
 export default function Page() {
  //fixed class
  const fixedClass =
- 'flex h-14 w-full flex-1 cursor-pointer select-none items-center justify-center rounded-[4px] bg-gray-30 font-semibold uppercase text-black focus:outline-none dark:bg-gray-70 dark:text-white p-4';
+ 'flex h-14 w-full flex-1 cursor-pointer select-none items-center justify-center rounded-[4px] font-semibold uppercase focus:outline-none  p-4';
 const fixedClassD =
  'flex select-none items-center justify-center border-2 border-gray-30 text-3xl font-bold uppercase text-black dark:border-black-10 dark:text-white';
 
@@ -39,7 +39,8 @@ const [row6, setRow6] = useState([]);
  const [enter4, setEnter4] = useState(false);
  const [enter5, setEnter5] = useState(false);
  const [enter6, setEnter6] = useState(false);
-
+ 
+ 
  //exist 1-6 row
  const [exist1, setExist1] = useState([]);
  const [exist2, setExist2] = useState([]);
@@ -55,7 +56,109 @@ const [row6, setRow6] = useState([]);
  const [position4, setPosition4] = useState([]);
  const [position5, setPosition5] = useState([]);
  const [position6, setPosition6] = useState([]);
+
+ //keyboad color
+ const [keyboard,setKeyboard] = useState([{display: false} , {values: []} , {position: []}])
+ const [color,setColor] = useState({})
+
+ const handleKeyboard = (number)=> {
  
+  if(number===1){
+    setKeyboard([{display: true}, {values: row1} , {position: keyboard[2].position}])
+      row1.map((info, index) => {
+        if(exist1[index]){
+            if(keyboard[2].position[index]){
+              return color[row1[index]] = 'bg-[#509C2C] text-white'
+            }
+            else{
+              return  color[row1[index]] =  'bg-[#C9B458] text-white'
+            }
+        }
+        else{
+          return color[row1[index]] =  'bg-black text-white'
+        }
+      })
+      setColor( color );
+    
+  }
+  
+  if(number===2){
+    setKeyboard([{display: true}, {values: row2} , {position: keyboard[2].position}])
+      row2.map((info, index) => {
+        if(exist2[index]){
+            if(keyboard[2].position[index]){
+              return color[row2[index]] = 'bg-[#509C2C] text-white'
+            }
+            else{
+              return  color[row2[index]] =  'bg-[#C9B458] text-white'
+            }
+        }
+        else{
+          return color[row2[index]] =  'bg-black text-white'
+        }
+      })
+      setColor( color );
+    
+  }
+  
+  if(number===3){
+    setKeyboard([{display: true}, {values: row3} , {position: keyboard[2].position}])
+      row3.map((info, index) => {
+        if(exist3[index]){
+            if(keyboard[2].position[index]){
+              return color[row3[index]] = 'bg-[#509C2C] text-white'
+            }
+            else{
+              return  color[row3[index]] =  'bg-[#C9B458] text-white'
+            }
+        }
+        else{
+          return color[row3[index]] =  'bg-black text-white'
+        }
+      })
+      setColor( color );
+    
+  }
+  if(number===4){
+    setKeyboard([{display: true}, {values: row4} , {position: keyboard[2].position}])
+      row4.map((info, index) => {
+        if(exist4[index]){
+            if(keyboard[2].position[index]){
+              return color[row4[index]] = 'bg-[#509C2C] text-white'
+            }
+            else{
+              return  color[row4[index]] =  'bg-[#C9B458] text-white'
+            }
+        }
+        else{
+          return color[row4[index]] =  'bg-black text-white'
+        }
+      })
+      setColor( color );
+    
+  }
+  if(number===5){
+    setKeyboard([{display: true}, {values: row5} , {position: keyboard[2].position}])
+      row5.map((info, index) => {
+        if(exist5[index]){
+            if(keyboard[2].position[index]){
+              return color[row5[index]] = 'bg-[#509C2C] text-white'
+            }
+            else{
+              return  color[row5[index]] =  'bg-[#C9B458] text-white'
+            }
+        }
+        else{
+          return color[row5[index]] =  'bg-black text-white'
+        }
+      })
+      setColor( color );
+    
+  }
+
+ }
+
+
  const handleValue = e => {
   let inputValue;
   if(e.target.value){
@@ -85,15 +188,21 @@ const [row6, setRow6] = useState([]);
           setEnter1(false);
         }
         else{
+          let p = []
           setPosition1(
             exist1.map((info, index) => {
               if (info && row1[index] === getWordFromLocalStorageArray[index]) {
+                p.push(true)
                 return true;
               } else {
+                p.push(false)
                 return false;
               }
             })
           );
+          keyboard[2].position = p
+          setKeyboard(keyboard)
+          handleKeyboard(1)
         }
 
         
@@ -117,16 +226,22 @@ const [row6, setRow6] = useState([]);
           setEnter1(false);
         }
         else{ 
-
+          let p = []
+         
           setPosition2(
             exist2.map((info, index) => {
               if (info && row2[index] === getWordFromLocalStorageArray[index]) {
+                p.push(true)
                 return true;
               } else {
+                p.push(false)
                 return false;
               }
             })
           );
+          keyboard[2].position = p
+          setKeyboard(keyboard)
+          handleKeyboard(2)
         }
         
       }
@@ -149,15 +264,24 @@ const [row6, setRow6] = useState([]);
           setEnter1(false);
         }
         else{  
+          let p = []
+        
           setPosition3(
             exist3.map((info, index) => {
               if (info && row3[index] === getWordFromLocalStorageArray[index]) {
+                p.push(true)
                 return true;
               } else {
+                p.push(false)
                 return false;
               }
             })
           );
+
+          keyboard[2].position = p
+          setKeyboard(keyboard)
+          handleKeyboard(3)
+
         }
         
       }
@@ -186,15 +310,23 @@ const [row6, setRow6] = useState([]);
           setEnter1(false);
         }
         else{  
+        let p = []
+        
           setPosition4(
             exist4.map((info, index) => {
               if (info && row4[index] === getWordFromLocalStorageArray[index]) {
+                p.push(true)
                 return true;
               } else {
+                p.push(false)
                 return false;
               }
             })
           );
+          keyboard[2].position = p
+          setKeyboard(keyboard)
+          handleKeyboard(4)
+
         }
         
       }
@@ -222,15 +354,22 @@ const [row6, setRow6] = useState([]);
           setEnter1(false);
         }
         else{ 
+        let p = []
           setPosition5(
             exist5.map((info, index) => {
               if (info && row5[index] === getWordFromLocalStorageArray[index]) {
+                p.push(true)
                 return true;
               } else {
+                p.push(false)
                 return false;
               }
             })
           );
+
+          keyboard[2].position = p
+          setKeyboard(keyboard)
+          handleKeyboard(5)
         }
        
       }
@@ -303,6 +442,7 @@ const [row6, setRow6] = useState([]);
       }
       else{
         if(row2.length < 5){
+          setKeyboard([{display: false}, {values: []}, {position: []}])
           setRow2([...row2, inputValue.toUpperCase()]);
 
           //find word existing or not
@@ -336,6 +476,7 @@ const [row6, setRow6] = useState([]);
       }
       else{
         if(row3.length < 5){
+          setKeyboard([{display: false}, {values: []}, {position: []}])
           setRow3([...row3, inputValue.toUpperCase()]);
 
           //find word existing or not
@@ -371,6 +512,7 @@ const [row6, setRow6] = useState([]);
       }
       else{
         if(row4.length<5){
+          setKeyboard([{display: false}, {values: []}, {position: []}])
           setRow4([...row4, inputValue.toUpperCase()]);
 
           //find word existing or not
@@ -408,6 +550,7 @@ const [row6, setRow6] = useState([]);
       }
       else{
         if(row5.length < 5){
+          setKeyboard([{display: false}, {values: []}, {position: []}])
           setRow5([...row5, inputValue.toUpperCase()]);
 
           //find word existing or not
@@ -447,6 +590,7 @@ const [row6, setRow6] = useState([]);
       }
       else{
         if(row6.length<5){
+          setKeyboard([{display: false}, {values: []}, {position: []}])
           setRow6([...row6, inputValue.toUpperCase()]);
 
           //find word existing or not
@@ -862,93 +1006,93 @@ const [row6, setRow6] = useState([]);
         <div className="typing">
           <div className="flex w-full flex-col items-center justify-center gap-2 px-2 pb-3 pt-1">
             <div className="flex w-full gap-2">
-              <button className={fixedClass} onClick={handleValue} value="q">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('Q') ? color['Q'] : 'bg-gray-30' }`} onClick={handleValue} value="q">
                 q
               </button>
-              <button className={fixedClass} onClick={handleValue} value="w">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('W') ? color['W'] : 'bg-gray-30' }`} onClick={handleValue} value="w">
                 w
               </button>
-              <button className={fixedClass} onClick={handleValue} value="e">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('E') ? color['E'] : 'bg-gray-30' }`} onClick={handleValue} value="e">
                 e
               </button>
-              <button className={fixedClass} onClick={handleValue} value="r">
+              <button className={` ${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('R') ? color['R'] : 'bg-gray-30' }`} onClick={handleValue} value="r">
                 r
               </button>
-              <button className={fixedClass} onClick={handleValue} value="t">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('T') ? color['T'] : 'bg-gray-30' }`} onClick={handleValue} value="t">
                 t
               </button>
-              <button className={fixedClass} onClick={handleValue} value="y">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('Y') ? color['Y'] : 'bg-gray-30' }`} onClick={handleValue} value="y">
                 y
               </button>
-              <button className={fixedClass} onClick={handleValue} value="u">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('U') ? color['U'] : 'bg-gray-30' }`} onClick={handleValue} value="u">
                 u
               </button>
-              <button className={fixedClass} onClick={handleValue} value="i">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('I') ? color['I'] : `bg-gray-30` }`} onClick={handleValue} value="i">
                 i
               </button>
-              <button className={fixedClass} onClick={handleValue} value="o">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('O') ? color['O'] : ` bg-gray-30` }`} onClick={handleValue} value="o">
                 o
               </button>
-              <button className={fixedClass} onClick={handleValue} value="p">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('P') ? color['P'] : 'bg-gray-30' }`} onClick={handleValue} value="p">
                 p
               </button>
             </div>
             <div className="flex w-full gap-2 px-[5%]">
-              <button className={fixedClass} onClick={handleValue} value="a">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('A') ? color['A'] : ` bg-gray-30` }`} onClick={handleValue} value="a">
                 a
               </button>
-              <button className={fixedClass} onClick={handleValue} value="s">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('S') ? color['S'] : 'bg-gray-30' }`} onClick={handleValue} value="s">
                 s
               </button>
-              <button className={fixedClass} onClick={handleValue} value="d">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('D') ? color['D'] : 'bg-gray-30' }`} onClick={handleValue} value="d">
                 d
               </button>
-              <button className={fixedClass} onClick={handleValue} value="f">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('F') ? color['F'] : 'bg-gray-30' }`} onClick={handleValue} value="f">
                 f
               </button>
-              <button className={fixedClass} onClick={handleValue} value="g">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('G') ? color['G'] : 'bg-gray-30' }`} onClick={handleValue} value="g">
                 g
               </button>
-              <button className={fixedClass} onClick={handleValue} value="h">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('H') ? color['H'] : 'bg-gray-30' }`} onClick={handleValue} value="h">
                 h
               </button>
-              <button className={fixedClass} onClick={handleValue} value="j">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('J') ? color['J'] : 'bg-gray-30' }`} onClick={handleValue} value="j">
                 j
               </button>
-              <button className={fixedClass} onClick={handleValue} value="k">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('K') ? color['K'] : 'bg-gray-30' }`} onClick={handleValue} value="k">
                 k
               </button>
-              <button className={fixedClass} onClick={handleValue} value="l">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('L') ? color['L'] : 'bg-gray-30' }`} onClick={handleValue} value="l">
                 l
               </button>
             </div>
             <div className="flex w-full gap-2">
-            <button className={fixedClass} onClick={handleValue}><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" viewBox="0 0 44.18 44.18" height="24" width="24"><path d="M10.625,5.09L0,22.09l10.625,17H44.18v-34H10.625z M42.18,37.09H11.734l-9.375-15l9.375-15H42.18V37.09z"></path><polygon points="18.887,30.797 26.18,23.504 33.473,30.797 34.887,29.383 27.594,22.09 34.887,14.797 33.473,13.383 26.18,20.676      18.887,13.383 17.473,14.797 24.766,22.09 17.473,29.383  "></polygon></svg></button>
+            <button  className={`${fixedClass} p-4 bg-gray-30`} onClick={handleValue}><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" viewBox="0 0 44.18 44.18" height="24" width="24"><path d="M10.625,5.09L0,22.09l10.625,17H44.18v-34H10.625z M42.18,37.09H11.734l-9.375-15l9.375-15H42.18V37.09z"></path><polygon points="18.887,30.797 26.18,23.504 33.473,30.797 34.887,29.383 27.594,22.09 34.887,14.797 33.473,13.383 26.18,20.676      18.887,13.383 17.473,14.797 24.766,22.09 17.473,29.383  "></polygon></svg></button>
 
 
-              <button className={fixedClass} onClick={handleValue} value="z">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('Z') ? color['Z'] : 'bg-gray-30' }`} onClick={handleValue} value="z">
                 z
               </button>
-              <button className={fixedClass} onClick={handleValue} value="x">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('X') ? color['X'] : 'bg-gray-30' }`} onClick={handleValue} value="x">
                 x
               </button>
-              <button className={fixedClass} onClick={handleValue} value="c">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('C') ? color['C'] : 'bg-gray-30' }`} onClick={handleValue} value="c">
                 c
               </button>
-              <button className={fixedClass} onClick={handleValue} value="v">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('V') ? color['V'] : 'bg-gray-30' }`} onClick={handleValue} value="v">
                 v
               </button>
-              <button className={fixedClass} onClick={handleValue} value="b">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('B') ? color['B'] : 'bg-gray-30' }`} onClick={handleValue} value="b">
                 b
               </button>
-              <button className={fixedClass} onClick={handleValue} value="n">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('N') ? color['N'] : 'bg-gray-30' }`} onClick={handleValue} value="n">
                 n
               </button>
-              <button className={fixedClass} onClick={handleValue} value="m">
+              <button className={`${fixedClass} ${ keyboard[0].display && keyboard[1].values.indexOf('M') ? color['M'] : 'bg-gray-30' }`} onClick={handleValue} value="m">
                 m
               </button>
               <button
-                className={fixedClass}
+                className={`${fixedClass} p-4 bg-gray-30`}
                 onClick={handleValue}
                 value="enter"
               >
