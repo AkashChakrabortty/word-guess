@@ -3,6 +3,7 @@ import Link from 'next/link';
 import toast, {Toaster} from 'react-hot-toast';
 import {getRndInteger} from '../../function/getRndInteger';
 import { SevenDictionary } from '../../data/SevenDictionary';
+import { isValidInput } from '../../function/isValidInput';
 
 export const metadata = {
   title: 'Wordle/7-latter game',
@@ -395,7 +396,7 @@ toast.success(`Your guess is right! The word is ${getWordFromLocalStorage}`);
           toast.error(`Your guess is wrong! The word is ${getWordFromLocalStorage}`);
         }
       }
-    } else if(inputValue === 'Backspace' || inputValue === 'a' || inputValue === 'b' || inputValue === 'c' || inputValue === 'd' || inputValue === 'e' || inputValue === 'f' || inputValue === 'g' || inputValue === 'h' || inputValue === 'i' || inputValue === 'j' || inputValue === 'k' || inputValue === 'l' || inputValue === 'm' || inputValue === 'n' || inputValue === 'o' || inputValue === 'p' || inputValue === 'q' || inputValue === 'r' || inputValue === 's' || inputValue === 't' || inputValue === 'u' || inputValue === 'v' || inputValue === 'w' || inputValue === 'x' || inputValue === 'y' || inputValue === 'z') {
+    } else if(isValidInput(inputValue)) {
       if (row1.length <= 7) {
         if(inputValue === 'Backspace' && !enter1){
           row1.pop()

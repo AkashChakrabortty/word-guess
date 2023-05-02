@@ -3,6 +3,7 @@ import Link from 'next/link';
 import toast, {Toaster} from 'react-hot-toast';
 import {SixDictionary} from '../../data/SixDictionary';
 import {getRndInteger} from '../../function/getRndInteger';
+import { isValidInput } from '../../function/isValidInput';
 
 export const metadata = {
   title: 'Wordle/6-latter game',
@@ -167,7 +168,6 @@ export default function Page() {
     else{
       inputValue = e.key ? e.key : 'Backspace'
     }
-    console.log(inputValue)
    
     if (inputValue == 'enter' || inputValue == 'Enter') {
       if (row1.length == 6 && !enter1) {
@@ -401,7 +401,7 @@ export default function Page() {
           toast.error(`Your guess is wrong! The word is ${getWordFromLocalStorage}`);
         }
       }
-    } else if(inputValue === 'Backspace' || inputValue === 'a' || inputValue === 'b' || inputValue === 'c' || inputValue === 'd' || inputValue === 'e' || inputValue === 'f' || inputValue === 'g' || inputValue === 'h' || inputValue === 'i' || inputValue === 'j' || inputValue === 'k' || inputValue === 'l' || inputValue === 'm' || inputValue === 'n' || inputValue === 'o' || inputValue === 'p' || inputValue === 'q' || inputValue === 'r' || inputValue === 's' || inputValue === 't' || inputValue === 'u' || inputValue === 'v' || inputValue === 'w' || inputValue === 'x' || inputValue === 'y' || inputValue === 'z') {
+    } else if(isValidInput(inputValue)) {
 
       if (row1.length <= 6) {
         

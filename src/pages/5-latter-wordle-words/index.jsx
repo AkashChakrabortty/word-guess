@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import Link from 'next/link';
 import toast, {Toaster} from 'react-hot-toast';
 import {FiveDictionary} from '../../data/FiveDictionary';
 import {getRndInteger} from '../../function/getRndInteger';
+import { isValidInput } from '../../function/isValidInput';
 
 export const metadata = {
   title: 'Wordle/5-latter game',
@@ -404,8 +405,7 @@ const [row6, setRow6] = useState([]);
         toast.error(`Your guess is wrong! The word is ${getWordFromLocalStorage}`);
       }
     }
-  } else if(inputValue === 'Backspace' || inputValue === 'a' || inputValue === 'b' || inputValue === 'c' || inputValue === 'd' || inputValue === 'e' || inputValue === 'f' || inputValue === 'g' || inputValue === 'h' || inputValue === 'i' || inputValue === 'j' || inputValue === 'k' || inputValue === 'l' || inputValue === 'm' || inputValue === 'n' || inputValue === 'o' || inputValue === 'p' || inputValue === 'q' || inputValue === 'r' || inputValue === 's' || inputValue === 't' || inputValue === 'u' || inputValue === 'v' || inputValue === 'w' || inputValue === 'x' || inputValue === 'y' || inputValue === 'z') {
-
+  } else if(isValidInput(inputValue)) {
     if (row1.length <= 5) {
       
       if(inputValue === 'Backspace' && !enter1){
