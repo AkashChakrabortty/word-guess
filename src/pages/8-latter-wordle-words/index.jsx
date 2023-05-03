@@ -4,6 +4,7 @@ import toast, {Toaster} from 'react-hot-toast';
 import {getRndInteger} from '../../function/getRndInteger';
 import { EightDictionary } from '../../data/EightDictionary';
 import { isValidInput } from '../../function/isValidInput';
+import { fixedClass, fixedClassD } from '../../fixedClass/fixedClass';
 
 export const metadata = {
   title: 'Wordle/8-latter game',
@@ -11,11 +12,6 @@ export const metadata = {
 }
 
 export default function Page() {
-  //fixed class
-  const fixedClass =
-  'flex h-14 w-full flex-1 cursor-pointer select-none items-center justify-center rounded-[4px] font-semibold uppercase focus:outline-none  p-4';
-const fixedClassD =
-  'flex select-none items-center justify-center border-2 border-gray-30 text-3xl font-bold uppercase text-black dark:border-black-10 dark:text-white';
 
      //get random index
      const index = getRndInteger(0, EightDictionary.length);
@@ -365,7 +361,7 @@ const fixedClassD =
             }
            
           }
-        } if(row6.length == 6 &&
+        } if(row6.length == 8 &&
           enter1 &&
           enter2 &&
           enter3 && 
